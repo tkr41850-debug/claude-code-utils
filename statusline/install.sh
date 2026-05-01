@@ -56,7 +56,7 @@ chmod +x "$TARGET"
 trap - EXIT
 
 # 5. Update settings.json
-NEW_CMD="bash \"\$HOME/.claude/cc-statusline.sh\""
+NEW_CMD="bash \"$TARGET\""
 if [ -f "$SETTINGS" ]; then
   if ! jq empty "$SETTINGS" >/dev/null 2>&1; then
     die "$SETTINGS is not valid JSON. Aborting before clobbering it."
